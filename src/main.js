@@ -20,15 +20,12 @@ form.addEventListener('submit', event => {
 
   const loader = renderLoader();
 
-  setTimeout(() => {
-    fetchImages(keyword)
-      .then(images => {
-        renderImages(images);
-        loader.remove();
-      })
-      .catch(error => {
-        console.log(error);
-        loader.remove();
-      });
-  }, 2000);
+  fetchImages(keyword)
+    .then(images => {
+      renderImages(images);
+      loader.remove();
+    })
+    .catch(error => {
+      loader.remove();
+    });
 });
