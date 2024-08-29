@@ -15,6 +15,9 @@ jobs:
         run: |
           npm install
           npm run build
+      
+      - name: Debug Environment Variables
+        run: printenv | grep VITE_API_KEY
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.0
