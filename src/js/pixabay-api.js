@@ -1,7 +1,7 @@
 import { showErrorToast } from './render-functions.js';
 
 export function fetchImages(keyword) {
-  const apiKey = '43854622-acb16c386b106d84adf209c8f';
+  const apiKey = import.meta.env.VITE_API_KEY;
   const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(
     keyword
   )}&image_type=photo&orientation=horizontal&safesearch=true`;

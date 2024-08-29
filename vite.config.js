@@ -2,8 +2,10 @@ import { defineConfig } from 'vite';
 import glob from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
+import dotenv from 'dotenv';
 
 export default defineConfig(({ command }) => {
+  dotenv.config();
   return {
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
